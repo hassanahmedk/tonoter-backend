@@ -11,6 +11,10 @@ import loginRoutes from "./routes/login.js";
 import signupRoutes from "./routes/signup.js";
 import signupCheckRoutes from "./routes/signupCheck.js";
 
+import * as dotenv from 'dotenv';
+let test = dotenv.config();
+
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -18,10 +22,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.urlencoded({extended:true}));
 
 
+const mongodbURL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.${process.env.DB_CLUSTER}.mongodb.net/?retryWrites=true&w=majority&ssl=true`;
 
 mongoose.connect(
   
-    "mongodb+srv://hassan:wowowo@cluster0.gydewuq.mongodb.net/?retryWrites=true&w=majority", 
+  mongodbURL, 
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
@@ -46,6 +51,14 @@ const newData = new NotesModel({
 
 newData.save();
 */
+
+app.get("/", function(req, res){
+  res.send({
+    name:"tonoter",
+    status:"OK",
+    description:"API is working if you're reciving this object :)"
+  })
+})
 
 app.use('/notes', notesRoutes);
 
