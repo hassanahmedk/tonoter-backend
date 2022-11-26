@@ -22,7 +22,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.urlencoded({extended:true}));
 
 
-const mongodbURL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.${process.env.DB_CLUSTER}.mongodb.net/?retryWrites=true&w=majority&ssl=true`;
+// const mongodbURL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.${process.env.DB_CLUSTER}.mongodb.net/?retryWrites=true&w=majority&ssl=true`;
+const mongodbURL = `mongodb+srv://hassan:wowowo@cluster0.gydewuq.mongodb.net/?retryWrites=true&w=majority&ssl=true`;
+
+
 
 mongoose.connect(
   
@@ -73,4 +76,4 @@ app.listen(port, "0.0.0.0", function(){
     console.log("Server running at 5000");
 });
 
-module.exports = app;
+export default app;
