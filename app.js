@@ -53,7 +53,7 @@ newData.save();
 */
 
 app.get("/", function(req, res){
-  res.send({
+  res.json({
     name:"tonoter",
     status:"OK",
     description:"API is working if you're reciving this object :)"
