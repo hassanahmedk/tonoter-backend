@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +20,6 @@
     "express": "^4.18.1",
     "mongodb": "^4.9.0",
     "mongoose": "^6.5.3",
-    "nodemon": "^2.0.19",
-    "vercel": "^28.5.6"
+    "nodemon": "^2.0.19"
   }
 }
