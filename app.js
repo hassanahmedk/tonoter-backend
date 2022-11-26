@@ -67,6 +67,8 @@ app.use('/signup', signupRoutes);
 app.use('/signupCheck', signupCheckRoutes);
 
 
-app.listen(5000, function(){
+const port = process.env.PORT || 3000;
+
+app.listen(port, function(){
     console.log("Server running at 5000");
 });
