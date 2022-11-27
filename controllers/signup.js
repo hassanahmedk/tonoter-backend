@@ -1,13 +1,9 @@
-import express from "express";
-
 import userModel from "../db/users.js";
 
 
 
 
-export const addUser = async (req, res) => {
-   //console.log(req.body);
-   
+export const addUser = async (req, res) => {  
     try{
         const newUser = new userModel({...req.body})
         newUser.save(function(err, result){

@@ -1,5 +1,3 @@
-import express from "express";
-
 import userModel from "../db/users.js";
 
 export const getNotes = async (req, res) => {
@@ -25,32 +23,7 @@ export const addNote = async (req, res) => {
         }
     });
 }
-// export const addNote = async (req, res) => {
-//     console.log(req.params);
-//     const newNote = new NotesModel({...req.body});
 
-
-//     newNote.save(function(err,result){
-//         if (err){
-//             console.log(err);
-//             res.send(err);
-//         }
-//         else{
-//             console.log(result);
-//             res.send(result);
-//         }
-//     });
-// }
-
-// export const deleteNote = async (req, res) => {
-//     NotesModel.findByIdAndDelete(req.params.id, function(err){
-//         if(!err){
-//             console.log("Deleted Succesfullt");
-//         } else {
-//             console.log(err);
-//         }
-//     })
-// }
 export const deleteNote = async (req, res) => {
 
     const user = await userModel.findOne({_id:req.params.userId});  
@@ -70,19 +43,6 @@ export const deleteNote = async (req, res) => {
 }
 
 
-// export const updateNote = async (req, res) => {
-
-//     NotesModel.findByIdAndUpdate(req.params.id, req.body,
-//         function (err, docs) {
-//             if (err){
-//                 console.log(err)
-//             }
-//             else{
-//                 console.log("Updated User : ", docs);
-//                 res.send(docs);
-//             }
-//     });
-// }
 export const updateNote = async (req, res) => {
 
     const user = await userModel.findOne({_id:req.params.userId});  

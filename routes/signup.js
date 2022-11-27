@@ -7,9 +7,9 @@ const router = express.Router();
 
 router.route("/")
 .post(addUser);
-// .post(addNote)
-// .delete(deleteNote)
-// .put(updateNote);
+// .post()
+// .delete()
+// .put();
 
 export default router;
 
