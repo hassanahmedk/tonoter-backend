@@ -45,6 +45,7 @@ app.get("/", function(req, res){
 app.use('/notes', notesRoutes);
 app.use('/login', loginRoutes);
 app.use('/signup', signupRoutes);
+
 app.use('/signupCheck', signupCheckRoutes);
 
 app.listen(port, "0.0.0.0", function(){
