@@ -1,11 +1,9 @@
-import express from "express";
-
 import userModel from "../db/users.js";
 
 export const authorizeLogin = async (req, res) => {
-   //console.log(req.body);
-   console.log('herer');
     try{
+      res.setHeader('Access-Control-Allow-Credentials', true);
+      res.setHeader('Access-Control-Allow-Origin', '*');
         userModel.findById(req.body.username)
         .then((user)=>{
             console.log(user);
@@ -20,8 +18,6 @@ export const authorizeLogin = async (req, res) => {
           }
 
         })
-        // res.status(200).json(NotesData);
-       // console.log(user);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
