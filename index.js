@@ -1,6 +1,9 @@
 import express from "express";
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import cors from "cors";
+
+
 
 import notesRoutes from "./routes/notes.js";
 import loginRoutes from "./routes/login.js";
@@ -11,8 +14,10 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
+
 const port = process.env.PORT || 5000;
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.urlencoded({extended:true}));
