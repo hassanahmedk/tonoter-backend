@@ -5,7 +5,10 @@ import userModel from "../db/users.js";
 
 export const addUser = async (req, res) => {  
     try{
-        const newUser = new userModel({...req.body})
+        const newUser = new userModel({...req.body, lists:[
+          {name:"current", items:[]},
+          {name:"pending", items:[]},
+        ]})
         newUser.save(function(err, result){
           if(!err){
             console.log("user added");
