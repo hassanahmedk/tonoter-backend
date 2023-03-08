@@ -4,9 +4,11 @@ import { nanoid } from "nanoid";
 // CREATE USER HERE
 
 const ItemSchema = new mongoose.Schema({
-  _id: {
+  uniqueId: {
     type: String,
-    default: () => nanoid(),
+    required: true,
+    default: () => nanoid(7),
+    index: { unique: true },
   },
   data: String,
   important: Boolean,
