@@ -6,6 +6,7 @@ import { nanoid } from "nanoid";
 const ItemSchema = new mongoose.Schema({
   uniqueId: {
     type: String,
+    default: new mongoose.Types.ObjectId()
   },
   data: String,
   important: Boolean,
