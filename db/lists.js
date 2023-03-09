@@ -1,12 +1,11 @@
 import mongoose from "mongoose";
-import { nanoid } from "nanoid";
+
 
 // CREATE USER HERE
 
 const ItemSchema = new mongoose.Schema({
   uniqueId: {
     type: String,
-    default: new mongoose.Types.ObjectId()
   },
   data: String,
   important: Boolean,
