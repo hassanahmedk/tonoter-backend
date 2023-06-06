@@ -7,7 +7,7 @@ export const NotesSchema = new mongoose.Schema({
     },
     content: String,
     tags: [],
-    dateModified: String,
+    dateModified: Date,
     user: String,
     favorite: {
       type:Boolean,
